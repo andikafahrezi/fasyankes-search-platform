@@ -91,6 +91,8 @@
               @update:model-value="val => form.nik = val.replace(/\D/g, '')"
             />
             <span v-if="errors.nik" class="error-msg">{{ errors.nik }}</span>
+            <!-- privacy notes -->
+            <span class="privacy-note">*Data NIK Anda digunakan untuk keperluan verifikasi identitas dan dijaga kerahasiaannya.</span>
           </div>
 
           <!-- Tanggal Lahir -->
@@ -481,6 +483,12 @@ async function submitForm() {
   margin-top: -2px;
 }
 
+.privacy-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.5;
+}
 /* ── Actions ──────────────────────────────────────────────── */
 .form-actions {
   display: grid;
