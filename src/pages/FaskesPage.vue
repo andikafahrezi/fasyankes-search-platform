@@ -172,7 +172,7 @@
                 v-if="selectedFaskes?.logo"
                 :src="selectedFaskes.logo"
                 :alt="selectedFaskes.nama"
-                style="width: 100%; height: 100%;"
+                style="width: 100%; height: 100%; object-fit: cover;"
               />
               <AppIcon v-else name="local_hospital" :size="24" color="#185fa5" />
             </div>
@@ -228,7 +228,7 @@ const filter = reactive({
   terkoverAsuransi: false
 })
 
-// ─── Data dummy ────────────────────────────────────────────────
+// ─── Data faskes dummy ────────────────────────────────────────────────
 const allFaskes = ref([
   {
     id: 1, nama: 'Klinik Aulia Medika', tipeLabel: 'KLINIK', subTipe: 'KLINIK PRATAMA',
@@ -240,7 +240,7 @@ const allFaskes = ref([
     id: 2, nama: 'RS Umum Daerah Bekasi', tipeLabel: 'RUMAH SAKIT', subTipe: 'RS UMUM',
     kategori: 'rumah_sakit', alamat: 'Jl. Pramuka No. 55, Bekasi Timur',
     provinsi: 'Jawa Barat', kota: 'Bekasi', tersedia: true,
-    buka24jam: true, terkoverAsuransi: true, image: '', logo: ''
+    buka24jam: true, terkoverAsuransi: true, image: '', logo: 'https://i.pinimg.com/1200x/46/6a/95/466a95e70b96ccfce46dd1d61a12ccb9.jpg'
   },
   {
     id: 3, nama: 'Puskesmas Tanah Abang', tipeLabel: 'PUSKESMAS', subTipe: 'PUSKESMAS KECAMATAN',
@@ -579,10 +579,11 @@ function goToDaftar() {
   border-radius: 12px;
   background: #e6f1fb;
   display: flex;
-  object-fit: contain;
+  /* object-fit: contain; */
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .dialog-faskes-nama {
   font-family: 'Plus Jakarta Sans', sans-serif;
